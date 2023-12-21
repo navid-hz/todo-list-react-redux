@@ -30,9 +30,16 @@
 }
 .bnItem span {
     font-size: 16px;
-    color: var(--pale-color);
+    
     
     margin: 5px;
+}
+
+.bnItemOn {
+    color: var(--primary-color);
+}
+.bnItemOff {
+    color: var(--pale-color);
 }
 
 @media (min-width: 600px) {

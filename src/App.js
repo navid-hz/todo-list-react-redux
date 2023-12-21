@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './App.module.css'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 //Components
 import BottomNavigation from './components/BottomNavigation'
@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/add-todo" element={<AddTodo />} />
         <Route path="/list-of-todos" element={<ListOfTodos />} />
+        <Route path="/" element={<Navigate to="/add-todo" />} />
       </Routes>
 
     </main>
