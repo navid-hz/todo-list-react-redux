@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from './ListOfTodos.module.css'
 import emptyList from '../assets/images/empty-list-removebg-preview.png'
 import { Link } from 'react-router-dom';
 import Todos from './Todos';
+import { useSelector, useDispatch } from 'react-redux';
+import {getAllTodos} from '../redux/reduxAction';
 
-function ListOfTodos() {
-  const loadTodos = [];
+
+
+const ListOfTodos = () => {
+  const dispatch = useDispatch();
+  const reduxData = useSelector((state) => state.todoAddReducer);
+  const loadTodos = reduxData.todoList;
+
+  useEffect(() => {
+    document.title = 'List of Todos';
+    //get all todos from local
+    dispatch(getAllTodos());
+  }, []);
 
   return (
     <div className={style.tlContainer}>
