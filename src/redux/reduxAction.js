@@ -22,7 +22,7 @@ const undoneTodo = (data) => {
         payload: data
     }
 };
-const getAllTodos = (data) => {
+const getAllTodos = () => {
     return {
         type: 'GET_ALL_TODOS',
     }
