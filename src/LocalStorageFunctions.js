@@ -9,8 +9,8 @@ const getFromLocalStorage = () => {
 
 const saveToLocalStorage = (data) => {
     const loadedItems = getFromLocalStorage();
-    loadedItems.push(data);
-    localStorage.setItem(TODO_KEY, JSON.stringify(loadedItems));
+    const updatedItems = [...loadedItems, data];
+    localStorage.setItem(TODO_KEY, JSON.stringify(updatedItems));
 };
 
 const deleteFromLocalStorage = (data) => {
